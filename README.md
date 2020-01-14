@@ -121,10 +121,29 @@ const stats = [
 ```
 7. Подготовить статистику в разрезе (сумма трат по категориям):
 ```js
-const purchases = [
+const stats = [
     {category: 'auto': amount: 5000},
     {category: 'food', amount: 6000},
     {category: 'beauty', amount: 300},
     {category: 'travel', amount: 30000},
+];
+```
+8. Выбрать только покупки по определённой категории (в функцию передаётся категория и массив):
+```js
+const purchases = [
+    {id: 1, date: '01.01.2020', amount: 2000, category: 'auto'},
+    {id: 2, date: '01.01.2020', amount: 3000, category: 'food'},
+    {id: 3, date: '01.01.2020', amount: 300, category: 'beauty'},
+    {id: 4, date: '03.01.2020', amount: 3000, category: 'auto'},
+    {id: 5, date: '03.01.2020', amount: 30000, category: 'travel'},
+    {id: 6, date: '04.01.2020', amount: 3000, category: 'food'},
+];
+
+const result = filterByCategory(purchases, 'auto');
+
+// В result должно быть:
+result = [
+    {id: 1, date: '01.01.2020', amount: 2000, category: 'auto'},
+    {id: 4, date: '03.01.2020', amount: 3000, category: 'auto'},
 ];
 ```
