@@ -1,0 +1,23 @@
+{
+  "name": "front-practice",
+  "version": "1.0.0",
+  "description": "Задача: в массиве хранятся данные о продажах. Написать функцию, которая вычисляет сумму всех продаж",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coursar/front-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coursar/front-practice/issues"
+  },
+  "homepage": "https://github.com/coursar/front-practice#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
