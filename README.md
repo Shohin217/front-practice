@@ -190,3 +190,27 @@ result = [
     console.log(result);
 }
 ```
+
+Для 9.4:
+
+Основная идея - храним в `acc` массив, в который добавляем (либо увеличиваем) сумму по категориям
+```js
+// [] - find -> undefined
+const mapped = purchases.map(o => o.values)
+    .flat()
+    .reduce((acc, curr) => {
+        const existent = acc.find(o => o.category === curr.category);
+        if (existent === undefined) {
+            acc.push({
+                category: curr.category,
+                amount: curr.amount,
+            });
+        } else {
+            existent.amount += curr.amount;
+        }
+        return acc;
+    }, [])
+    // TODO: дальше ищете max
+;
+console.log(mapped);
+```
