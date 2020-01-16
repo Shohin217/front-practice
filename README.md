@@ -156,3 +156,37 @@ result = [
     {id: 4, date: '03.01.2020', amount: 3000, category: 'auto'},
 ];
 ```
+
+---- 
+
+Подсказки:
+```js
+{
+    const purchases = [
+        {id: 1, date: '01.01.2020', amount: 2000, category: 'auto'},
+        {id: 2, date: '01.01.2020', amount: 3000, category: 'food'},
+        {id: 3, date: '01.01.2020', amount: 300, category: 'beauty'},
+        {id: 4, date: '03.01.2020', amount: 3000, category: 'auto'},
+        {id: 5, date: '03.01.2020', amount: 30000, category: 'travel'},
+        {id: 6, date: '04.01.2020', amount: 3000, category: 'food'},
+    ];
+
+    // acc - []
+    // acc - [{date: 01.01.2020, amount: 2000}]
+    const result = purchases.reduce((acc, curr) => {
+        // find - возвращает объект, если есть
+        // если нет - undefined
+        const exists = acc.find(o => o.date === curr.date);
+        if (exists === undefined) {
+            acc.push({
+                date: curr.date,
+                amount: curr.amount,
+            });
+        } else {
+            exists.amount += curr.amount;
+        }
+        return acc;
+    }, []);
+    console.log(result);
+}
+```
